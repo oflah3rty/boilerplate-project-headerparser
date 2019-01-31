@@ -30,3 +30,13 @@ app.get("/api/hello", function (req, res) {
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+//Api and Microservices Projects - Request Header Parser Microservice
+exports.whoami = app.get('/api/whoami/', function(req,res){
+  console.log(req.params);
+ res.json({
+   ipaddress:req.ip,
+   language:req.get('Accept-Language'),
+   software:req.get('User-Agent')
+ });
+});
