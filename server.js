@@ -32,7 +32,7 @@ var listener = app.listen(process.env.PORT, function () {
 });
 
 //Api and Microservices Projects - Request Header Parser Microservice
-exports.whoami = app.get('/api/whoami/', function(req,res){
+app.get('/api/whoami/', function(req,res){
   console.log(req.params);
  res.json({
    ipaddress:req.ip,
